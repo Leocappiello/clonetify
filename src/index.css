@@ -7,7 +7,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+  font-family: Roboto;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+@media(max-width: 767px) {
+  .scrollable {
+    overflow: scroll;
+  }
+  .slider {
+    visibility: hidden;
+  }
 }

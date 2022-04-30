@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import BarPlay from './components/BarPlay';
+import LateralMenu from './components/LateralMenu';
+import LateralConfig from './components/LateralConfig';
+import MainContent from './components/MainContent';
+import BarReproduction from './components/BarReproduction';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="bg-dark container-fluid p-0 d-flex justify-content-center flex-column">
+        <div className="row w-100 mx-0">
+          <div className="col-2 d-none d-md-block">
+            <LateralMenu></LateralMenu>
+          </div>
+          <div className="col-12 col-md-8 p-0 bg-black text-white">
+            <MainContent></MainContent>
+          </div>
+          <div className="col-2 text-white bg-dark d-none d-md-block px-0">
+            <LateralConfig></LateralConfig>
+          </div>
+        </div>
+        <div className="d-inline-flex bg-black justify-content-center">
+            <BarPlay></BarPlay>
+        </div>
+        <div className='bg-black'>
+            <BarReproduction></BarReproduction>
+        </div>
+      </div>
+
     </div>
   );
 }
