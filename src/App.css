@@ -18,7 +18,29 @@ html {
   opacity: 1 !important;
 }
 
+.overlay{
+  display: none;
+  height: 0em;
+}
+
+.album:hover .overlay{
+  display: block;
+  position: relative;
+  bottom: 5%;
+  left: 40%;
+}
+
 .addIcon:hover{
   background-color: gray;
   border-radius: 50%;
+}
+
+
+@media(max-width: 767px) {
+  .scrollable {
+    overflow: scroll;
+  }
+  .slider {
+    visibility: hidden;
+  }
 }

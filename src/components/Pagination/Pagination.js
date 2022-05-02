@@ -1,5 +1,3 @@
-import { useEffect } from "react"
-
 const Pagination = ({ totalAlbums, albumPerPages, paginate, currentPage }) => {
     const pageNumbers = []
 
@@ -7,20 +5,15 @@ const Pagination = ({ totalAlbums, albumPerPages, paginate, currentPage }) => {
         pageNumbers.push(i)
     }
 
-    useEffect(() => {
-        console.log(currentPage)
-    })
-
-
     return (
         <>
             <nav>
-                <ul className="pagination justify-content-center mt-3">
+                <ul className="pagination justify-content-center mt-4">
                     {pageNumbers.map((number) => {
                         if (number === currentPage) {
                             return (
-                                <li key={number} className="page-item active">
-                                    <a href="!#" onClick={() => { paginate(number) }} className="page-link bg-dark" >
+                                <li key={number} className="page-item">
+                                    <a href="!#" onClick={() => { paginate(number) }} className="page-link bg-dark text-white">
                                         {number}
                                     </a>
                                 </li>

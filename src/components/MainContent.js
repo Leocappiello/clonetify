@@ -34,14 +34,17 @@ const MainContent = () => {
             height: '20vh',
             width: '20vh'
         },
+        row: {
+            overflow: 'hidden'
+        }
 
     }
 
     return (
         <>
             <div className="scrollable container-fluid mx-0 p-0" style={styles.container}>
-                <div className="col-12 text-start px-5 ">
-                    <div className="d-flex justify-content-between pt-3">
+                <div className="col-12 text-start">
+                    <div className="d-flex justify-content-between pt-3 mx-4">
                         <div className="buttonNavigate">
                             <ButtonGroup disableElevation variant="contained" className="buttonsBackNext">
                                 <button style={styles.button}><ArrowBackIosIcon></ArrowBackIosIcon></button>
@@ -52,9 +55,9 @@ const MainContent = () => {
                         <Chip icon={<AccountCircleIcon />} label="Usuario" style={styles.chip} className="chip"/>
                     </div>
 
-                    <h1 className="py-3" style={styles.h1}>Popular</h1>
+                    <h1 className="py-3 mx-4" style={styles.h1}>Popular</h1>
 
-                    <div className="card bg-dark py-3">
+                    <div style={{zIndex: 0}} className="card bg-dark py-3 mx-4 animate__animated  animate__fadeInLeft animate__fast">
                         <div className="row mx-3 justify-content-around">
                             <div className="col-3 p-0 my-3 rounded" style={styles.square}>
 
@@ -67,7 +70,7 @@ const MainContent = () => {
                         </div>
                     </div>
                     <div className="card-albums pt-4 d-flex">
-                        <div className="row justify-content-start">
+                        <div className="row justify-content-start pt-2 mx-0" style={styles.row}>
                             <Albums></Albums>
                         </div>
                     </div>
