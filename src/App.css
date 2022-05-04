@@ -3,11 +3,36 @@ html {
   margin: 0;
   padding: 0;
 }
+.bg-black, .page-link {
+  background-color: #1b1c1E !important;
+  color: #fef9f8;
+}
+.bg-dark {
+  background-color: #303030 !important;
+  color: #fef9f8 !important;
+}
+.selected, .page-link:hover {
+  color: #303030;
+  background-color: #fef9f8 !important;
+}
+
+.buttonPlay{
+  opacity: 0.8;
+}
+
+.buttonPlay:hover {
+  color: #1976d2 !important;
+  opacity: 1;
+}
 
 .friend, .buttonsBackNext button, .chip, .addIcon{
   transition: 0.5s;
   opacity: 0.8;
   cursor: pointer;
+}
+
+.friend{
+  opacity: 0.7;
 }
 
 .album{
@@ -35,6 +60,13 @@ html {
   border-radius: 50%;
 }
 
+.text * {
+  margin: 0
+}
+
+.avatar {
+  border-radius: 50% !important;
+}
 
 @media(max-width: 767px) {
   .scrollable {
@@ -42,5 +74,11 @@ html {
   }
   .slider {
     visibility: hidden;
+  }
+  .album .overlay{
+    display: block;
+    position: relative;
+    bottom: 5%;
+    left: 40%;
   }
 }

@@ -21,6 +21,12 @@ const Albums = () => {
         setAlbums(albums)
     }
 
+    
+    const handleRemoveAlbum = (e) => {
+        let newAlbums = albums.filter(elm => (String(elm.id) !== e.target.id))
+        setAlbums(newAlbums)
+    }
+
     const indexLastAlbum = currentPage * albumPerPage
     const indexFirstAlbum = indexLastAlbum - albumPerPage
     const currentAlbum = albums.slice(indexFirstAlbum, indexLastAlbum)
@@ -31,7 +37,7 @@ const Albums = () => {
 
     return (
         <>
-            <Album albums={currentAlbum} loading={loading} />
+            <Album handleRemoveAlbum={handleRemoveAlbum} albums={currentAlbum} loading={loading} />
             <Pagination totalAlbums={albums.length} albumPerPages={albumPerPage} paginate={paginate} currentPage={currentPage}></Pagination>
         </> 
     )

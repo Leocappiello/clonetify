@@ -16,25 +16,30 @@ const BarPlay = () => {
             width: '3.4vw',
             height: '3.4vw',
             borderRadius: '50%',
-            maxWidth: '4.5em', 
-            maxHeight: '4.5em', 
-            minWidth: '4.5em', 
+            maxWidth: '4.5em',
+            maxHeight: '4.5em',
+            minWidth: '4.5em',
             minHeight: '4.5em'
         },
         secondaryButtons: {
             transform: 'scale(0.8)',
         },
+        buttonBar: {
+            width: '20vw'
+        }
     }
 
     return (
         <div className="row w-100" style={styles.container}>
-            <div className="col-12">
-                <div className="buttons d-flex justify-content-center">
-                    <Button style={{ ...styles.playButton, ...styles.secondaryButtons }}><ShuffleIcon /></Button>
-                    <Button style={styles.playButton}><SkipPreviousIcon /></Button>
-                    <Button style={styles.playButton}><PlayArrowIcon /></Button>
-                    <Button style={styles.playButton}><SkipNextIcon /></Button>
-                    <Button style={{ ...styles.playButton, ...styles.secondaryButtons }}><RepeatIcon /></Button>
+            <div className="col-12 d-flex justify-content-center">
+                    <div style={styles.buttonBar}>
+                <div className="buttons d-flex justify-content-evenly">
+                        <Button className='shadow bg-dark buttonPlay' style={{ ...styles.playButton, ...styles.secondaryButtons }}><ShuffleIcon /></Button>
+                        <Button className='shadow bg-dark buttonPlay' style={styles.playButton}><SkipPreviousIcon /></Button>
+                        <Button className='shadow bg-dark buttonPlay' style={styles.playButton}><PlayArrowIcon /></Button>
+                        <Button className='shadow bg-dark buttonPlay' style={styles.playButton}><SkipNextIcon /></Button>
+                        <Button className='shadow bg-dark buttonPlay' style={{ ...styles.playButton, ...styles.secondaryButtons }}><RepeatIcon /></Button>
+                    </div>
                 </div>
             </div>
         </div>

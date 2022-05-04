@@ -3,28 +3,40 @@ import BarPlay from './components/BarPlay';
 import LateralMenu from './components/LateralMenu';
 import LateralConfig from './components/LateralConfig';
 import MainContent from './components/MainContent';
+import Profile from './components/Profile';
 import BarReproduction from './components/BarReproduction';
-import { Route, Routes, Router } from 'react-router-dom';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import BarTop from "./components/BarTop";
 
 function App() {
 
+  const styles = {
+    container: {
+      height: '100vh'
+    }
+  }
   return (
     <div className="App">
-      <div className="bg-dark container-fluid p-0 d-flex justify-content-center flex-column">
+      <div className="bg-dark container-fluid p-0 d-flex justify-content-center flex-column" style={styles.container}>
         <div className="row w-100 mx-0">
-          <div className="col-2 d-none d-md-block">
-            <LateralMenu></LateralMenu>
-          </div>
-          <div className="col-12 col-md-8 p-0 bg-black text-white">
-            <Router>
+          <BrowserRouter>
+            <div className="col-2 d-none d-md-block">
+              <LateralMenu></LateralMenu>
+            </div>
+            <div className="col-12 col-md-8 p-0 bg-black text-white">
+              <BarTop></BarTop>
+             
               <Routes>
-                <Route path='/' element={<MainContent />}>
-                </Route>
-                <Route path='/search' element={<p>asd</p>}>
-                </Route>
+
+                <Route path='/' element={<MainContent></MainContent>}></Route>
+                <Route path='/profile/*' element={<Profile></Profile>}></Route>
+                <Route path='/search/*' element={<Profile></Profile>}></Route>
+                <Route path='/library/*' element={<Profile></Profile>}></Route>
+                <Route path='*' element={<h2>Not Found</h2>}></Route>
+
               </Routes>
-            </Router>
-          </div>
+            </div>
+          </BrowserRouter>
           <div className="col-2 text-white bg-dark d-none d-md-block px-0">
             <LateralConfig></LateralConfig>
           </div>

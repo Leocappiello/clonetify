@@ -35,6 +35,9 @@ const LateralConfig = () => {
         },
         friends: {
             marginLeft: '10%'
+        },
+        activity: {
+            opacity: 0.9
         }
     }
 
@@ -42,7 +45,7 @@ const LateralConfig = () => {
         <div style={styles.scroll}>
             <div className="d-flex justify-content-between py-3">
                 <PersonAddIcon style={styles.iconInvisible}></PersonAddIcon>
-                <h5>Actividad de tus amigos</h5>
+                <h5 style={styles.activity}>Actividad de tus amigos</h5>
                 <PersonAddIcon style={styles.addPeople} className="addIcon"></PersonAddIcon>
             </div>
             <div className="friends" style={styles.friends}>

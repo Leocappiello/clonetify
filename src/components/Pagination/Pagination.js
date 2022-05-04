@@ -13,14 +13,20 @@ const Pagination = ({ totalAlbums, albumPerPages, paginate, currentPage }) => {
                         if (number === currentPage) {
                             return (
                                 <li key={number} className="page-item">
-                                    <a href="!#" onClick={() => { paginate(number) }} className="page-link bg-dark text-white">
+                                    <a href="!#" onClick={(e) => { 
+                                            e.preventDefault()
+                                            paginate(number) 
+                                        }} className="page-link selected">
                                         {number}
                                     </a>
                                 </li>
                             )
                         } else {
                             return (<li key={number} className="page-item">
-                                <a href="!#" onClick={() => { paginate(number) }} className="page-link bg-dark" >
+                                <a href="!#" onClick={(e) => { 
+                                        e.preventDefault()
+                                        paginate(number) 
+                                    }} className="page-link" >
                                     {number}
                                 </a>
                             </li>)

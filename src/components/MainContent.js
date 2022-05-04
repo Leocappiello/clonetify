@@ -1,13 +1,9 @@
-import { ButtonGroup, Chip } from "@mui/material"
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import Albums from "./Albums";
 
 const MainContent = () => {
     const styles = {
         container: {
-            height: "85vh",
+            height: "80vh",
             width: '100%',
             overflowY: 'auto'
         },
@@ -44,20 +40,10 @@ const MainContent = () => {
         <>
             <div className="scrollable container-fluid mx-0 p-0" style={styles.container}>
                 <div className="col-12 text-start">
-                    <div className="d-flex justify-content-between pt-3 mx-4">
-                        <div className="buttonNavigate">
-                            <ButtonGroup disableElevation variant="contained" className="buttonsBackNext">
-                                <button style={styles.button}><ArrowBackIosIcon></ArrowBackIosIcon></button>
-                                <button style={styles.button}><ArrowForwardIosIcon></ArrowForwardIosIcon></button>
 
-                            </ButtonGroup>
-                        </div>
-                        <Chip icon={<AccountCircleIcon />} label="Usuario" style={styles.chip} className="chip"/>
-                    </div>
+                    <h1 className="pb-3 mx-4" style={styles.h1}>Popular</h1>
 
-                    <h1 className="py-3 mx-4" style={styles.h1}>Popular</h1>
-
-                    <div style={{zIndex: 0}} className="card bg-dark py-3 mx-4 animate__animated  animate__fadeInLeft animate__fast">
+                    <div style={{ zIndex: 0 }} className="card bg-dark py-3 mx-4 animate__animated  animate__fadeInLeft animate__fast">
                         <div className="row mx-3 justify-content-around">
                             <div className="col-3 p-0 my-3 rounded" style={styles.square}>
 
@@ -70,7 +56,7 @@ const MainContent = () => {
                         </div>
                     </div>
                     <div className="card-albums pt-4 d-flex">
-                        <div className="row justify-content-start pt-2 mx-0" style={styles.row}>
+                        <div className="row justify-content-start pt-2 mx-2" style={styles.row}>
                             <Albums></Albums>
                         </div>
                     </div>
