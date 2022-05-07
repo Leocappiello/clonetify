@@ -22,7 +22,7 @@ const Profile = () => {
         <>
             <div className="title py-4 mx-5" style={styles.container}>
                 <div className="card text-dark shadow" style={styles.backgroundCard}>
-                    <div className="row m-0 bg-black">
+                    <div className="row m-0 bg-dark rounded-start">
                         <div className="col-md-4 p-0 d-flex justify-content-center">
                             <img style={styles.avatar} src={Avatar} alt="" className='img-fluid rounded-start m-4 avatar' />
                         </div>
@@ -34,7 +34,7 @@ const Profile = () => {
                                     <p>Cantidad de canciones en tu biblioteca:</p>
                                     <p>Pais:</p>
                                     <p>Fecha de nacimiento:</p>
-                                    <Button className='bg-black' variant='outlined'></Button>
+                                    <Button className='bg-black mt-3 buttonEdit' variant='outlined'>Editar perfil</Button>
                                 </div>
                             </div>
                         </div>

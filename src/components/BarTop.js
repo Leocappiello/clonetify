@@ -28,7 +28,7 @@ const BarTop = () => {
         }
     }
     return (
-        <div className="d-flex justify-content-between pt-3 mx-5">
+        <div className="d-flex justify-content-between py-2 mx-5">
             <div className="buttonNavigate">
                 <ButtonGroup disableElevation variant="contained" className="buttonsBackNext" style={styles.buttonGroup}>
                     <button style={styles.button}><ArrowBackIosIcon></ArrowBackIosIcon></button>
@@ -37,7 +37,7 @@ const BarTop = () => {
             </div>
 
             <Link to='/profile'>
-                <Chip icon={<AccountCircleIcon className="bg-white rounded-circle" />} label="Usuario" style={styles.chip} className="chip bg-primary"></Chip>
+                <Chip icon={<AccountCircleIcon className="bg-white rounded-circle" />} label="Usuario" style={styles.chip} className="chip bg-primary "></Chip>
             </Link>
         </div >
     )

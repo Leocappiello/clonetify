@@ -4,6 +4,7 @@ import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
 import SkipNextIcon from '@mui/icons-material/SkipNext';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import ShuffleIcon from '@mui/icons-material/Shuffle';
+import { useState } from 'react';
 
 const BarPlay = () => {
     const styles = {
@@ -29,16 +30,30 @@ const BarPlay = () => {
         }
     }
 
+    const [icon, setIcon] = useState(false)
+
+    const iconRepeat = document.getElementsByClassName('repeat')
+    const iconShuffle = document.getElementsByClassName('shuffle')
+
+    const handleClickButtonRepeat = (e) => {
+        setIcon(!icon)
+        icon ? iconRepeat[0].style.color = 'white' : iconRepeat[0].style.color = '#1976d2'
+    }
+    const handleClickButtonShuffle = (e) => {
+        setIcon(!icon)
+        icon ? iconShuffle[0].style.color = 'white' : iconShuffle[0].style.color = '#1976d2'
+    }
+
     return (
         <div className="row w-100" style={styles.container}>
             <div className="col-12 d-flex justify-content-center">
-                    <div style={styles.buttonBar}>
-                <div className="buttons d-flex justify-content-evenly">
-                        <Button className='shadow bg-dark buttonPlay' style={{ ...styles.playButton, ...styles.secondaryButtons }}><ShuffleIcon /></Button>
+                <div style={styles.buttonBar}>
+                    <div className="buttons d-flex justify-content-evenly">
+                        <Button onClick={handleClickButtonShuffle} className='shadow bg-dark buttonPlay' style={{ ...styles.playButton, ...styles.secondaryButtons }}><ShuffleIcon onClick={handleClickButtonShuffle} className='shuffle' /></Button>
                         <Button className='shadow bg-dark buttonPlay' style={styles.playButton}><SkipPreviousIcon /></Button>
                         <Button className='shadow bg-dark buttonPlay' style={styles.playButton}><PlayArrowIcon /></Button>
                         <Button className='shadow bg-dark buttonPlay' style={styles.playButton}><SkipNextIcon /></Button>
-                        <Button className='shadow bg-dark buttonPlay' style={{ ...styles.playButton, ...styles.secondaryButtons }}><RepeatIcon /></Button>
+                        <Button onClick={handleClickButtonRepeat} className='shadow bg-dark buttonPlay' style={{ ...styles.playButton, ...styles.secondaryButtons }}><RepeatIcon className='repeat' onClick={handleClickButtonRepeat} /></Button>
                     </div>
                 </div>
             </div>

@@ -5,7 +5,7 @@ html {
 }
 .bg-black, .page-link {
   background-color: #1b1c1E !important;
-  color: #fef9f8;
+  color: #fef9f8 !important;
 }
 .bg-dark {
   background-color: #303030 !important;
@@ -67,6 +67,11 @@ html {
 .avatar {
   border-radius: 50% !important;
 }
+
+.buttonEdit:hover{  
+  color: white !important;
+}
+
 
 @media(max-width: 767px) {
   .scrollable {

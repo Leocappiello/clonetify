@@ -1,4 +1,4 @@
-const Album = ({ albums, loading, handleRemoveAlbum }) => {
+const Album = ({ albums, loading, handleRemoveAlbum, handleAddLibrary}) => {
     if (loading) {
         return (<h2>Loading...</h2>)
     }
@@ -27,7 +27,7 @@ const Album = ({ albums, loading, handleRemoveAlbum }) => {
                         <div key={album.id} className="col-lg-3 col-md-6 album col-12 my-2 p-0 animate__animated animate__fadeInLeft">
                             <div className="card bg-dark m-3" style={styles.card}>
                                 <div className="overlay rounded-top text-center">
-                                    <button type="button" style={styles.btn} className="btn p-0 animate__animated animate__zoomIn mx-1 animate__faster bg-white rounded-circle">+</button>
+                                    <button onClick={handleAddLibrary} id={album.id} type="button" style={styles.btn} className="btn p-0 animate__animated animate__zoomIn mx-1 animate__faster bg-white rounded-circle">+</button>
                                     <button id={album.id} onClick={handleRemoveAlbum} type="button" style={styles.btn} className="btn p-0 animate__animated animate__zoomIn animate__faster btn-danger rounded-circle text-white">X</button>
                                 </div>
                                 <img src={album.thumbnailUrl} className="card-img-top p-3" alt="" />

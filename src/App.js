@@ -7,6 +7,8 @@ import Profile from './components/Profile';
 import BarReproduction from './components/BarReproduction';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import BarTop from "./components/BarTop";
+import Library from './components/Library';
+import { useState } from 'react';
 
 function App() {
 
@@ -15,6 +17,9 @@ function App() {
       height: '100vh'
     }
   }
+
+  const [library, setLibrary] = useState([])
+
   return (
     <div className="App">
       <div className="bg-dark container-fluid p-0 d-flex justify-content-center flex-column" style={styles.container}>
@@ -28,10 +33,10 @@ function App() {
              
               <Routes>
 
-                <Route path='/' element={<MainContent></MainContent>}></Route>
+                <Route path='/' element={<MainContent library={library} setLibrary={setLibrary}></MainContent>}></Route>
                 <Route path='/profile/*' element={<Profile></Profile>}></Route>
                 <Route path='/search/*' element={<Profile></Profile>}></Route>
-                <Route path='/library/*' element={<Profile></Profile>}></Route>
+                <Route path='/library/*' element={<Library library={library} setLibrary={setLibrary}></Library>}></Route>
                 <Route path='*' element={<h2>Not Found</h2>}></Route>
 
               </Routes>
