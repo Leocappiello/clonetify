@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/clonetify/static/css/main.8a63bb66.css",
-    "main.js": "/clonetify/static/js/main.d20ad8dd.js",
+    "main.css": "/clonetify/static/css/main.2d52d4bc.css",
+    "main.js": "/clonetify/static/js/main.67b111fb.js",
     "static/media/profilePhoto.png": "/clonetify/static/media/profilePhoto.447c583a12d2f6181d2a.png",
     "index.html": "/clonetify/index.html",
-    "main.8a63bb66.css.map": "/clonetify/static/css/main.8a63bb66.css.map",
-    "main.d20ad8dd.js.map": "/clonetify/static/js/main.d20ad8dd.js.map"
+    "main.2d52d4bc.css.map": "/clonetify/static/css/main.2d52d4bc.css.map",
+    "main.67b111fb.js.map": "/clonetify/static/js/main.67b111fb.js.map"
   },
   "entrypoints": [
-    "static/css/main.8a63bb66.css",
-    "static/js/main.d20ad8dd.js"
+    "static/css/main.2d52d4bc.css",
+    "static/js/main.67b111fb.js"
   ]
 }
