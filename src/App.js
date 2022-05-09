@@ -5,7 +5,7 @@ import LateralConfig from './components/LateralConfig';
 import MainContent from './components/MainContent';
 import Profile from './components/Profile';
 import BarReproduction from './components/BarReproduction';
-import { Route, Routes, BrowserRouter } from 'react-router-dom';
+import { Route, Routes, BrowserRouter, Navigate } from 'react-router-dom';
 import BarTop from "./components/BarTop";
 import Library from './components/Library';
 import { useState } from 'react';
@@ -42,7 +42,7 @@ function App() {
                 <Route path='/' element={<MainContent library={library} setLibrary={setLibrary}></MainContent>}></Route>
                 <Route path='/profile/*' element={<Profile library={library}></Profile>}></Route>
                 <Route path='/library/*' element={<Library library={library} setLibrary={setLibrary}></Library>}></Route>
-                <Route path='*' element={<h2>Not Found</h2>}></Route>
+                <Route path='*' element={<Navigate to='/' />}></Route>
 
               </Routes>
             </div>
