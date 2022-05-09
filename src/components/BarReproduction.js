@@ -22,9 +22,9 @@ const BarReproduction = () => {
                 <div className="bar d-flex text-white justify-content-center">
                     <p className='m-0 pt-1'>0:00</p>
                     <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center" className="mx-4 my-0">
-                        <Slider aria-label="Volume" style={styles.slider} />
+                        <Slider aria-label="Volume" style={styles.slider} 
+                         min={1} max={100}/>
                     </Stack>
-                    <p className='m-0 pt-1'>0:00</p>
                 </div>
             </div>
             <div className="col-4 text-white d-flex justify-content-end slider">

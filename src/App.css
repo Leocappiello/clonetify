@@ -12,7 +12,7 @@ html {
   color: #fef9f8 !important;
 }
 .selected, .page-link:hover {
-  color: #303030;
+  color: #303030 !important;
   background-color: #fef9f8 !important;
 }
 
@@ -43,17 +43,18 @@ html {
   opacity: 1 !important;
 }
 
-.overlay{
+.overlay, .overlayLibrary{
   display: none;
   height: 0em;
 }
 
-.album:hover .overlay{
+.album:hover .overlay, .album:hover .overlayLibrary{
   display: block;
   position: relative;
-  bottom: 5%;
-  left: 40%;
+  bottom: 3%;
+  left: 49%;
 }
+
 
 .addIcon:hover{
   background-color: gray;
@@ -69,9 +70,19 @@ html {
 }
 
 .buttonEdit:hover{  
-  color: white !important;
+  background-color: #fef9f8 !important;
+  color: #303030 !important;
 }
 
+.infoProfile{
+  color: #303030 !important;
+  text-decoration: none !important;
+  font-weight: 500;
+}
+
+.buttonNavigate{
+  visibility: hidden;
+}
 
 @media(max-width: 767px) {
   .scrollable {
@@ -80,10 +91,13 @@ html {
   .slider {
     visibility: hidden;
   }
-  .album .overlay{
+  .album .overlay, .album:hover .overlayLibrary{
     display: block;
     position: relative;
-    bottom: 5%;
-    left: 40%;
+    bottom: 3%;
+    left: 49%;
+  }
+  .buttonNavigate{
+    visibility: visible;
   }
 }

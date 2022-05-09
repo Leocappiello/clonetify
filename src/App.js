@@ -19,6 +19,12 @@ function App() {
   }
 
   const [library, setLibrary] = useState([])
+  const [icon, setIcon] = useState(false)
+  const [clicked, setClicked] = useState(true)
+
+  const handleChangeIconPlay = () => {
+    setClicked(!clicked)
+  }
 
   return (
     <div className="App">
@@ -30,12 +36,11 @@ function App() {
             </div>
             <div className="col-12 col-md-8 p-0 bg-black text-white">
               <BarTop></BarTop>
-             
+
               <Routes>
 
                 <Route path='/' element={<MainContent library={library} setLibrary={setLibrary}></MainContent>}></Route>
-                <Route path='/profile/*' element={<Profile></Profile>}></Route>
-                <Route path='/search/*' element={<Profile></Profile>}></Route>
+                <Route path='/profile/*' element={<Profile library={library}></Profile>}></Route>
                 <Route path='/library/*' element={<Library library={library} setLibrary={setLibrary}></Library>}></Route>
                 <Route path='*' element={<h2>Not Found</h2>}></Route>
 
@@ -47,7 +52,12 @@ function App() {
           </div>
         </div>
         <div className="d-inline-flex bg-black justify-content-center">
-          <BarPlay></BarPlay>
+          <BarPlay icon={icon}
+            setIcon={setIcon}
+            clicked={clicked}
+            setClicked={setClicked}
+            handleChangeIconPlay={handleChangeIconPlay}
+          ></BarPlay>
         </div>
         <div className='bg-black'>
           <BarReproduction></BarReproduction>

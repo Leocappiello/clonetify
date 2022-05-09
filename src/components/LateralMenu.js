@@ -1,11 +1,9 @@
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
-import SearchIcon from '@mui/icons-material/Search';
 import HomeIcon from '@mui/icons-material/Home';
 import Button from '@mui/material/Button'
 import Divider from '@mui/material/Divider'
-//import AddBoxIcon from '@mui/icons-material/AddBox';
-//import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
 import { Link } from 'react-router-dom'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const LateralMenu = () => {
     const styles = {
@@ -28,27 +26,22 @@ const LateralMenu = () => {
     return (
         <div className="my-2">
             <div className="options text-white d-flex flex-column img-fluid">
-                    <Link to='/'>
-                        <Button style={styles.button['& Button']}><HomeIcon style={styles.icon} />Inicio</Button>
+                <Link to='/'>
+                    <Button style={styles.button['& Button']}><HomeIcon style={styles.icon} />Inicio</Button>
 
-                    </Link>
+                </Link>
 
-                    <Link to='/search'>
-                        <Button style={styles.button['& Button']}><SearchIcon style={styles.icon} />Buscar</Button>
-
-                    </Link>
-
-                    <Link to='/library'>
-                        <Button style={styles.button['& Button']}><LibraryBooksIcon style={styles.icon} />Tu biblioteca</Button>
-                    </Link>
+                <Link to='/library'>
+                    <Button style={styles.button['& Button']}><LibraryBooksIcon style={styles.icon} />Tu biblioteca</Button>
+                </Link>
             </div>
-            {/* <div className="options text-white text-start">
-                <Button style={styles.button['& Button']}><AddBoxIcon style={styles.icon} />Crear lista</Button>
-                <Button style={styles.button['& Button']}><FavoriteBorder style={styles.icon} />Canciones que te gustan</Button>
-
-            </div> */}
             <Divider style={styles.divider}></Divider>
 
+            <div className="options text-white d-flex flex-column img-fluid">
+                <Link to='/profile'>
+                    <Button style={styles.button['& Button']}><AccountCircleIcon style={styles.icon} />Tu perfil</Button>
+                </Link>
+            </div>
         </div>
     )
 }

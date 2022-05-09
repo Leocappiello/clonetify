@@ -24,17 +24,11 @@ const Albums = ({ library, setLibrary }) => {
     }
 
     const handleAddLibrary = (e) => {
-        //let newAlbums = albums.filter(elm => (String(elm.id) !== e.target.id))
-        //setAlbums(newAlbums)
-        //console.log(e.target.id)
-        //console.log(albums[e.target.id])
-        let albumsLibrary = library
-        console.log((library))
-        console.log(typeof(library))
-        console.log(typeof(albumsLibrary))
-        setLibrary(albumsLibrary.push(albums[e.target.id]))
-        console.log(library)
+        if(!library.includes(albums[e.target.id-1])){
+            setLibrary([...library, albums[e.target.id - 1]])
+        }
     }
+
 
     const indexLastAlbum = currentPage * albumPerPage
     const indexFirstAlbum = indexLastAlbum - albumPerPage

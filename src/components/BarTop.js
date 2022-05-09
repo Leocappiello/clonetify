@@ -1,6 +1,6 @@
-import { ButtonGroup, Chip } from "@mui/material"
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import { ButtonGroup, Chip, Button } from "@mui/material"
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+import HomeIcon from '@mui/icons-material/Home';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Link } from "react-router-dom";
 
@@ -31,10 +31,22 @@ const BarTop = () => {
         <div className="d-flex justify-content-between py-2 mx-5">
             <div className="buttonNavigate">
                 <ButtonGroup disableElevation variant="contained" className="buttonsBackNext" style={styles.buttonGroup}>
-                    <button style={styles.button}><ArrowBackIosIcon></ArrowBackIosIcon></button>
-                    <button style={styles.button}><ArrowForwardIosIcon></ArrowForwardIosIcon></button>
+
+                    <Link to='/'>
+                        <Button className="mx-1 bg-dark" style={styles.button['& Button']}><HomeIcon style={styles.icon} /></Button>
+                    </Link>
+
+                    <Link to='/library'>
+                        <Button className="mx-1 bg-dark" style={styles.button['& Button']}><LibraryBooksIcon style={styles.icon} /></Button>
+                    </Link>
+
+                    <Link to='/profile'>
+                        <Button className="mx-1 bg-dark" style={styles.button['& Button']}><AccountCircleIcon style={styles.icon} /></Button>
+                    </Link>
+
+
                 </ButtonGroup>
-            </div>
+            </div >
 
             <Link to='/profile'>
                 <Chip icon={<AccountCircleIcon className="bg-white rounded-circle" />} label="Usuario" style={styles.chip} className="chip bg-primary "></Chip>
