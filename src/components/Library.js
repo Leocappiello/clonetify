@@ -1,4 +1,4 @@
-const Library = ({ library, setLibrary }) => {
+const Library = ({ library, setLibrary, notifyRemove }) => {
     const styles = {
         card: {
             height: 'min-content',
@@ -24,6 +24,7 @@ const Library = ({ library, setLibrary }) => {
     const handleRemoveOfLibrary = (e) => {
         let newLibrary = library.filter(elm => (String(elm.id) !== e.target.id))
         setLibrary(newLibrary)
+        notifyRemove()
     }
 
     if (library.length > 0) {
@@ -36,7 +37,8 @@ const Library = ({ library, setLibrary }) => {
                                 <div key={album.id} className="col-lg-3 col-md-6 album col-12 my-2 p-0 animate__animated animate__fadeInLeft">
                                     <div className="card bg-dark m-3" style={styles.card}>
                                         <div className="overlayLibrary rounded-top text-center">
-                                            <button id={album.id} onClick={handleRemoveOfLibrary} type="button" style={styles.btn} className="btn p-0 animate__animated animate__zoomIn animate__faster btn-danger rounded-circle text-white">X</button>
+                                            <button id={album.id} onClick={handleRemoveOfLibrary} 
+                                            type="button" style={styles.btn} className="btn p-0 animate__animated animate__zoomIn animate__faster btn-danger rounded-circle text-white">X</button>
                                         </div>
                                         <img src={album.thumbnailUrl} className="card-img-top p-3" alt="" />
                                         <div className="description m-2 px-2">

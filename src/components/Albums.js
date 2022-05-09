@@ -2,8 +2,10 @@ import { useEffect, useState } from "react"
 import Album from "./Pagination/Album"
 import 'animate.css'
 import Pagination from "./Pagination/Pagination"
+import { ToastContainer } from 'react-toastify'
 
-const Albums = ({ library, setLibrary }) => {
+
+const Albums = ({ library, setLibrary, notifyAdd }) => {
     const [albums, setAlbums] = useState([])
     const [loading, setLoading] = useState(true)
     const [currentPage, setCurrentPage] = useState(1)
@@ -24,9 +26,10 @@ const Albums = ({ library, setLibrary }) => {
     }
 
     const handleAddLibrary = (e) => {
-        if(!library.includes(albums[e.target.id-1])){
+        if (!library.includes(albums[e.target.id - 1])) {
             setLibrary([...library, albums[e.target.id - 1]])
         }
+        notifyAdd()
     }
 
 
@@ -42,6 +45,7 @@ const Albums = ({ library, setLibrary }) => {
         <>
             <Album handleAddLibrary={handleAddLibrary} handleRemoveAlbum={handleRemoveAlbum} albums={currentAlbum} loading={loading} />
             <Pagination totalAlbums={albums.length} albumPerPages={albumPerPage} paginate={paginate} currentPage={currentPage}></Pagination>
+            <ToastContainer theme="dark"></ToastContainer>
         </>
     )
 }

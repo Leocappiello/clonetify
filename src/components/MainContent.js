@@ -1,6 +1,5 @@
 import Albums from "./Albums";
-
-const MainContent = ({library, setLibrary}) => {
+const MainContent = ({library, setLibrary, notifyAdd}) => {
     const styles = {
         container: {
             height: "80vh",
@@ -57,7 +56,7 @@ const MainContent = ({library, setLibrary}) => {
                     </div>
                     <div className="card-albums pt-4 d-flex">
                         <div className="row justify-content-start pt-2 mx-2" style={styles.row}>
-                            <Albums library={library} setLibrary={setLibrary}></Albums>
+                            <Albums notifyAdd={notifyAdd} library={library} setLibrary={setLibrary}></Albums>
                         </div>
                     </div>
                 </div>

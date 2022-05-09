@@ -2,7 +2,7 @@ import Avatar from '../profilePhoto.png'
 import { useState } from 'react'
 import ModalComponent from './ModalComponent'
 
-const Profile = ({ library }) => {
+const Profile = ({ library, notifyEditInfo }) => {
     const styles = {
         avatar: {
             maxWidth: '10vw',
@@ -50,7 +50,7 @@ const Profile = ({ library }) => {
 
                                 <p>Fecha de nacimiento: <span className='infoProfile'>{profile.birthday}</span></p>
 
-                                <ModalComponent library={library} profile={profile} setProfile={setProfile}></ModalComponent>
+                                <ModalComponent notifyEditInfo={notifyEditInfo} library={library} profile={profile} setProfile={setProfile}></ModalComponent>
                             </div>
                         </div>
                     </div>

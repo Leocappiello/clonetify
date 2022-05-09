@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import { TextField } from '@mui/material';
 
-const ModalComponent = ({ profile, setProfile, library }) => {
+const ModalComponent = ({ profile, setProfile, library, notifyEditInfo }) => {
     const [show, setShow] = useState(false);
 
-    const handleClose = () => setShow(false);
+    const handleClose = () => {
+        setShow(false)
+        notifyEditInfo()
+    };
     const handleShow = () => setShow(true);
     const changeValue = (attribute) => {
         let newAttribute = attribute.target.getAttribute('name')
