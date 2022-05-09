@@ -91,7 +91,7 @@ html {
   .slider {
     visibility: hidden;
   }
-  .album .overlay, .album:hover .overlayLibrary{
+  .album .overlay, .overlayLibrary{
     display: block;
     position: relative;
     bottom: 3%;
